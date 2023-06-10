@@ -113,3 +113,24 @@ const addVideoStream = (videoEl, stream, name) => {
     }
 }
 
+const muteUnmute = () => {
+    const enabled = myVideoStream.getAudioTracks()[0].enabled;
+    if(enabled) {
+        myVideoStream.getAudioTracks()[0].enabled = false;
+        document.getElementById("mic").style.color = "red";
+    } else {
+        document.getElementById("mic").style.color = "white";
+        myVideoStream.getAudioTracks()[0].enabled = true;
+    }
+};
+
+const VideomuteUnmute = () => {
+    const enabled = myVideoStream.getVideoTracks()[0].enabled;
+    if(enabled) {
+        myVideoStream.getVideoTracks()[0].enabled = false;
+        document.getElementById("mic").style.color = "red";
+    } else {
+        document.getElementById("mic").style.color = "white";
+        myVideoStream.getVideoTracks()[0].enabled = true;
+    }
+}
